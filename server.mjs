@@ -35,6 +35,18 @@ async function ktrade() {
   };
 }
 
+async function adEngineering() {
+  if (!env.AD_ENGINEERING_EMAIL || !env.AD_ENGINEERING_PASSWORD) return { connected: false, reason: 'AD Engineering credentials are not configured locally.' };
+  const base = env.AD_ENGINEERING_API_BASE || 'https://bvk0cvcp20.execute-api.us-east-1.amazonaws.com';
+  const login = await fetch(`${base}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: env.AD_ENGINEERING_EMAIL, password: env.AD_ENGINEERING_PASSWORD }) }).then(r => r.json());
+  if (!login.token) throw new Error(login.message || 'AD Engineering login failed');
+  const proposals = await fetch(`${base}/proposalHistory`, { headers: { Authorization: `Bearer ${login.token}` } }).then(r => r.json());
+  const now = new Date();
+  const generatedThisMonth = (Array.isArray(proposals) ? proposals : []).filter(item => { const date = new Date(item.proposalGeneratedAt); return date.getFullYear() === now.getFullYear() && date.getMonth() === now.getMonth(); }).length;
+  const monthlyLimit = number(env.AD_ENGINEERING_MONTHLY_LIMIT || 5);
+  return { connected: true, generatedThisMonth, monthlyLimit, remaining: Math.max(monthlyLimit - generatedThisMonth, 0), utilisation: monthlyLimit ? +(generatedThisMonth / monthlyLimit * 100).toFixed(1) : 0 };
+}
+
 async function api(res, live = false) {
   if (!live) {
     try {
@@ -44,9 +56,9 @@ async function api(res, live = false) {
     } catch { /* No scheduled snapshot yet: fetch a live one below. */ }
   }
   try {
-    const data = await ktrade();
+    const [data, adData] = await Promise.all([ktrade(), adEngineering()]);
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-    res.end(JSON.stringify({ generatedAt: new Date().toISOString(), ktrade: data, adEngineering: { connected: false, reason: 'Waiting for a reachable AD Engineering API endpoint.' } }));
+    res.end(JSON.stringify({ generatedAt: new Date().toISOString(), ktrade: data, adEngineering: adData }));
   } catch (error) {
     res.writeHead(502, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify({ error: error.message }));
