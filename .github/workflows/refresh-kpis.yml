@@ -1,0 +1,41 @@
+name: Refresh KPI snapshot
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 11:00 PKT
+    - cron: '0 11 * * *'  # 16:00 PKT
+    - cron: '0 14 * * *'  # 19:00 PKT
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch live KPI snapshot
+        env:
+          KTRADE_EMAIL: ${{ secrets.KTRADE_EMAIL }}
+          KTRADE_PASSWORD: ${{ secrets.KTRADE_PASSWORD }}
+          KTRADE_CLIENT_NAME: ${{ secrets.KTRADE_CLIENT_NAME }}
+          KTRADE_API_BASE: ${{ secrets.KTRADE_API_BASE }}
+          AD_ENGINEERING_API_BASE: ${{ secrets.AD_ENGINEERING_API_BASE }}
+          AD_ENGINEERING_EMAIL: ${{ secrets.AD_ENGINEERING_EMAIL }}
+          AD_ENGINEERING_PASSWORD: ${{ secrets.AD_ENGINEERING_PASSWORD }}
+          AD_ENGINEERING_MONTHLY_LIMIT: ${{ secrets.AD_ENGINEERING_MONTHLY_LIMIT }}
+        run: node refresh.mjs
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cache.json
+          git diff --cached --quiet || git commit -m "Update KPI snapshot [skip ci]"
+          git push

@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "public/**/*", "use": "@vercel/static" },
-    { "src": "api/kpis.mjs", "use": "@vercel/node" }
+    { "src": "api/kpis.mjs", "use": "@vercel/node", "config": { "includeFiles": "data/cache.json" } }
   ],
   "routes": [
     { "src": "/api/kpis", "dest": "/api/kpis.mjs" },

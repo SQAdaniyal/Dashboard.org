@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-08-25T07:55:51.333Z",
+  "ktrade": {
+    "connected": true,
+    "allocatedMinutes": 10000,
+    "consumedMinutes": 269.63,
+    "remainingMinutes": 9730.37,
+    "utilisation": 2.7,
+    "conversations": 0,
+    "averageDuration": "01:34",
+    "trend": [
+      {
+        "label": "September 2025",
+        "value": 0
+      },
+      {
+        "label": "October 2025",
+        "value": 0
+      },
+      {
+        "label": "November 2025",
+        "value": 0
+      },
+      {
+        "label": "December 2025",
+        "value": 0
+      },
+      {
+        "label": "January 2026",
+        "value": 0
+      },
+      {
+        "label": "February 2026",
+        "value": 0
+      },
+      {
+        "label": "March 2026",
+        "value": 0
+      },
+      {
+        "label": "April 2026",
+        "value": 0
+      },
+      {
+        "label": "May 2026",
+        "value": 0
+      },
+      {
+        "label": "June 2026",
+        "value": 0
+      },
+      {
+        "label": "July 2026",
+        "value": 0
+      },
+      {
+        "label": "August 2026",
+        "value": 172
+      }
+    ],
+    "rawReportCount": 0
+  },
+  "adEngineering": {
+    "connected": true,
+    "generatedThisMonth": 5,
+    "monthlyLimit": 5,
+    "remaining": 0,
+    "utilisation": 100
+  }
+}
