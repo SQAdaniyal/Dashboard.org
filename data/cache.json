@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-25T07:55:51.333Z",
+  "generatedAt": "2026-08-25T08:43:59.913Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 269.63,
-    "remainingMinutes": 9730.37,
+    "consumedMinutes": 272.53,
+    "remainingMinutes": 9727.47,
     "utilisation": 2.7,
     "conversations": 0,
-    "averageDuration": "01:34",
+    "averageDuration": "01:33",
     "trend": [
       {
         "label": "September 2025",
@@ -55,7 +55,7 @@
       },
       {
         "label": "August 2026",
-        "value": 172
+        "value": 174
       }
     ],
     "rawReportCount": 0
@@ -65,6 +65,56 @@
     "generatedThisMonth": 5,
     "monthlyLimit": 5,
     "remaining": 0,
-    "utilisation": 100
+    "utilisation": 100,
+    "trend": [
+      {
+        "label": "September 2025",
+        "value": 0
+      },
+      {
+        "label": "October 2025",
+        "value": 0
+      },
+      {
+        "label": "November 2025",
+        "value": 0
+      },
+      {
+        "label": "December 2025",
+        "value": 0
+      },
+      {
+        "label": "January 2026",
+        "value": 0
+      },
+      {
+        "label": "February 2026",
+        "value": 0
+      },
+      {
+        "label": "March 2026",
+        "value": 0
+      },
+      {
+        "label": "April 2026",
+        "value": 0
+      },
+      {
+        "label": "May 2026",
+        "value": 0
+      },
+      {
+        "label": "June 2026",
+        "value": 34
+      },
+      {
+        "label": "July 2026",
+        "value": 1
+      },
+      {
+        "label": "August 2026",
+        "value": 5
+      }
+    ]
   }
 }
