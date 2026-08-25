@@ -1,119 +1,143 @@
 {
-  "generatedAt": "2026-08-25T08:43:59.913Z",
+  "generatedAt": "2026-08-25T11:34:31.807Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 272.53,
-    "remainingMinutes": 9727.47,
-    "utilisation": 2.7,
+    "consumedMinutes": 280.83,
+    "remainingMinutes": 9719.17,
+    "utilisation": 2.8,
     "conversations": 0,
     "averageDuration": "01:33",
     "trend": [
       {
+        "key": "2025-09",
         "label": "September 2025",
         "value": 0
       },
       {
+        "key": "2025-10",
         "label": "October 2025",
         "value": 0
       },
       {
+        "key": "2025-11",
         "label": "November 2025",
         "value": 0
       },
       {
+        "key": "2025-12",
         "label": "December 2025",
         "value": 0
       },
       {
+        "key": "2026-01",
         "label": "January 2026",
         "value": 0
       },
       {
+        "key": "2026-02",
         "label": "February 2026",
         "value": 0
       },
       {
+        "key": "2026-03",
         "label": "March 2026",
         "value": 0
       },
       {
+        "key": "2026-04",
         "label": "April 2026",
         "value": 0
       },
       {
+        "key": "2026-05",
         "label": "May 2026",
         "value": 0
       },
       {
+        "key": "2026-06",
         "label": "June 2026",
         "value": 0
       },
       {
+        "key": "2026-07",
         "label": "July 2026",
         "value": 0
       },
       {
+        "key": "2026-08",
         "label": "August 2026",
-        "value": 174
+        "value": 180
       }
     ],
     "rawReportCount": 0
   },
   "adEngineering": {
     "connected": true,
-    "generatedThisMonth": 5,
+    "generatedThisMonth": 1,
     "monthlyLimit": 5,
-    "remaining": 0,
-    "utilisation": 100,
+    "remaining": 4,
+    "utilisation": 20,
     "trend": [
       {
+        "key": "2025-09",
         "label": "September 2025",
         "value": 0
       },
       {
+        "key": "2025-10",
         "label": "October 2025",
         "value": 0
       },
       {
+        "key": "2025-11",
         "label": "November 2025",
         "value": 0
       },
       {
+        "key": "2025-12",
         "label": "December 2025",
         "value": 0
       },
       {
+        "key": "2026-01",
         "label": "January 2026",
         "value": 0
       },
       {
+        "key": "2026-02",
         "label": "February 2026",
         "value": 0
       },
       {
+        "key": "2026-03",
         "label": "March 2026",
         "value": 0
       },
       {
+        "key": "2026-04",
         "label": "April 2026",
         "value": 0
       },
       {
+        "key": "2026-05",
         "label": "May 2026",
         "value": 0
       },
       {
+        "key": "2026-06",
         "label": "June 2026",
-        "value": 34
+        "value": 29
       },
       {
+        "key": "2026-07",
         "label": "July 2026",
         "value": 1
       },
       {
+        "key": "2026-08",
         "label": "August 2026",
-        "value": 5
+        "value": 1
       }
     ]
   }
