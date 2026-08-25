@@ -7,6 +7,7 @@ import { buildSnapshot } from './lib/kpis.mjs';
 await loadEnv();
 
 const root = process.cwd();
+const publicDir = join(root, 'public');
 const contentType = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8' };
 
 async function api(res, live = false) {
@@ -31,8 +32,8 @@ http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
   if (url.pathname === '/api/kpis') return api(res, url.searchParams.get('live') === '1');
   const requested = url.pathname === '/' ? 'index.html' : normalize(url.pathname).replace(/^[/\\]+/, '');
-  const file = join(root, requested);
-  if (!file.startsWith(root)) { res.writeHead(403); return res.end(); }
+  const file = join(publicDir, requested);
+  if (!file.startsWith(publicDir)) { res.writeHead(403); return res.end(); }
   try { await stat(file); res.writeHead(200, { 'Content-Type': contentType[extname(file)] || 'application/octet-stream' }); res.end(await readFile(file)); }
   catch { res.writeHead(404); res.end('Not found'); }
 }).listen(4173, () => console.log('KPI dashboard: http://localhost:4173'));
