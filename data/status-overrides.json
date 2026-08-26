@@ -1,0 +1,5 @@
+{
+  "_readme": "Set an entry to flag amber status on the dashboard, e.g. \"ktrade\": { \"level\": \"amber\", \"note\": \"Investigating slow responses.\" }. Valid keys: ktrade, adEngineering. Remove the entry (or its level) to go back to automatic green/red.",
+  "ktrade": null,
+  "adEngineering": null
+}
