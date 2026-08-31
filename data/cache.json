@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T13:26:38.770Z",
+  "generatedAt": "2026-08-31T19:44:52.643Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
     "consumedMinutes": 862.3,
     "remainingMinutes": 9137.7,
     "utilisation": 8.6,
-    "conversations": 468,
+    "conversations": 0,
     "averageDuration": "01:45",
     "trend": [
       {
@@ -76,16 +76,11 @@
   },
   "adEngineering": {
     "connected": true,
-    "generatedThisMonth": 1,
+    "generatedThisMonth": 0,
     "monthlyLimit": 5,
-    "remaining": 4,
-    "utilisation": 20,
+    "remaining": 5,
+    "utilisation": 0,
     "trend": [
-      {
-        "key": "2025-09",
-        "label": "September 2025",
-        "value": 0
-      },
       {
         "key": "2025-10",
         "label": "October 2025",
@@ -140,6 +135,11 @@
         "key": "2026-08",
         "label": "August 2026",
         "value": 1
+      },
+      {
+        "key": "2026-09",
+        "label": "September 2026",
+        "value": 0
       }
     ],
     "statusLevel": "green",
