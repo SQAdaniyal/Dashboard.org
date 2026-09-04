@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-04T11:04:25.811Z",
+  "generatedAt": "2026-09-04T14:51:32.462Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 736.88,
-    "remainingMinutes": 9263.12,
-    "utilisation": 7.4,
+    "consumedMinutes": 746,
+    "remainingMinutes": 9254,
+    "utilisation": 7.5,
     "conversations": 178,
-    "averageDuration": "02:04",
+    "averageDuration": "02:05",
     "trend": [
       {
         "key": "2025-10",
