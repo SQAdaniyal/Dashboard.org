@@ -1,10 +1,92 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ConvoIQ Platform</title><link rel="stylesheet" href="styles.css"></head>
-<body><div id="loading-overlay" class="loading-overlay"><div class="spinner-3d"><i></i><i></i></div><p>Refreshing dashboard…</p></div><div class="shell"><aside><a class="brand" href="#"><span class="brand-mark">C</span><span>ConvoIQ - Catalect</span></a><div class="side-note top"><span class="pulse"></span> Data updates at<br><strong>11:00 · 16:00 · 19:00</strong></div><p class="eyebrow">COMMAND CENTER</p><nav><a class="active" href="#overview">Overview</a><a href="#alerts">Alerts <b id="alert-count" style="display:none">0</b></a></nav></aside>
-<main><header><div><p class="eyebrow" id="today">—</p><h1>Good morning, team.</h1><p class="sub">A live view of platform usage, balance risk and proposal performance.</p></div><div class="header-actions"><div class="period-block"><span class="micro-label">Current month</span><span class="filter" id="period">—</span></div><div class="range-picker"><button class="filter" id="range-toggle">Aug 2026 <span class="chev">▾</span></button><div class="range-popover" id="range-popover"><div class="range-presets"><button data-preset="this-month">This month</button><button data-preset="last-month">Last month</button><button data-preset="last-3">Last 3 months</button><button data-preset="last-6">Last 6 months</button><button data-preset="last-12">Last 12 months</button><button data-preset="all">All time</button></div><div class="range-custom"><label>From<input type="date" id="range-from-date"></label><label>To<input type="date" id="range-to-date"></label><p class="range-note">K-Trade reports monthly totals only — custom dates resolve to the months they fall in.</p><div class="range-actions"><button id="range-cancel" type="button">Cancel</button><button id="range-apply" type="button" class="primary">Apply</button></div></div></div></div><button id="refresh" class="refresh"><span class="icon">↻</span> <span class="label">Refresh</span></button></div></header>
-<section class="panel agent-status" id="agent-status"><div class="panel-head"><p class="eyebrow">AGENT STATUS</p><button id="clear-filter" class="text-button" style="display:none">Clear filter ✕</button></div><div class="status-row" id="status-row"><div class="status-chip" data-key="ktrade" role="button" tabindex="0" title="Click to show K-Trade data only"><i class="dot" id="status-dot-ktrade"></i><div><strong>K-Trade</strong><span id="status-note-ktrade">Checking…</span></div></div><div class="status-chip" data-key="ad" role="button" tabindex="0" title="Click to show AD Engineering data only"><i class="dot" id="status-dot-ad"></i><div><strong>AD Engineering</strong><span id="status-note-ad">Checking…</span></div></div></div></section>
-<section class="panel range-summary" id="range-summary"><div class="panel-head"><div><p class="eyebrow">SELECTED PERIOD</p><h2 id="range-summary-title">This month</h2></div></div><div class="chart-wrap range-chart-wrap"><canvas id="range-chart"></canvas><div id="range-chart-empty" class="empty" style="display:none">No data available for this period.</div></div><div class="range-legend"><button class="legend-toggle" id="legend-ktrade" data-key="ktrade"><i style="background:#3563e9"></i>K-Trade conversations <b id="range-ktrade">—</b></button><button class="legend-toggle" id="legend-ad" data-key="ad"><i style="background:#22c1a0"></i>AD Engineering proposals <b id="range-ad">—</b></button></div></section>
-<section class="panel source-panel" id="ktrade"><div class="panel-head"><div><p class="eyebrow">K-TRADE</p><h2>This month</h2></div><span class="badge live" id="ktrade-badge">Live source</span></div><div class="source-stats"><div><span>Calls this month</span><strong id="calls-used">—</strong></div><div><span>Minutes used</span><strong id="minutes-used">—</strong></div><div><span>Minutes remaining</span><strong id="minutes-left">—</strong></div></div><small id="minutes-caption">Loading K-Trade data</small><p class="chart-label">Call volume trend</p><div class="chart-wrap"><canvas id="trend-chart"></canvas><div id="empty-trend" class="empty">Connect K-Trade to load usage history.</div></div><p class="chart-foot" id="lastmonth-ktrade-caption">Last month: —</p></section>
-<section class="panel source-panel" id="ad"><div class="panel-head"><div><p class="eyebrow">AD ENGINEERING</p><h2>This month</h2></div><span class="badge pending" id="ad-badge">Awaiting API</span></div><div class="source-stats"><div><span>Proposals generated</span><strong id="proposals-generated">—</strong></div><div><span>Proposals remaining</span><strong id="proposals-remaining">—</strong></div></div><small id="proposals-caption">Connect AD Engineering</small><p class="chart-label">Proposal generation trend</p><div class="chart-wrap"><canvas id="ad-trend-chart"></canvas><div id="empty-ad-trend" class="empty">Connect AD Engineering to load proposal history.</div></div><p class="chart-foot" id="lastmonth-ad-caption">Last month: —</p></section>
+<body><div id="loading-overlay" class="loading-overlay"><div class="spinner-3d"><i></i><i></i></div><p>Refreshing dashboard…</p></div><div class="shell"><aside><a class="brand" href="#"><span class="brand-mark">C</span><span>ConvoIQ - Catalect</span></a><div class="side-note top"><span class="pulse"></span> Data updates at<br><strong>11:00 · 16:00 · 19:00</strong></div><p class="eyebrow">COMMAND CENTER</p><nav><a class="active" href="#overview">Overview</a><a href="#ktrade">K-Trade</a><a href="#ad">AD Engineering</a><a href="#alerts">Alerts <b id="alert-count" style="display:none">0</b></a></nav></aside>
+<main><header><div><p class="eyebrow" id="today">—</p><h1>Good morning, team.</h1><p class="sub">A live view of platform usage, balance risk and proposal performance.</p></div><div class="header-actions"><div class="period-block"><span class="micro-label">Current month</span><span class="filter" id="period">—</span></div><button id="refresh" class="refresh"><span class="icon">↻</span> <span class="label">Refresh</span></button></div></header>
+<section class="panel agent-status" id="overview"><div class="panel-head"><p class="eyebrow">AGENT STATUS</p></div><div class="status-row" id="status-row"><div class="status-chip" data-key="ktrade"><i class="dot" id="status-dot-ktrade"></i><div><strong>K-Trade</strong><span id="status-note-ktrade">Checking…</span></div></div><div class="status-chip" data-key="ad"><i class="dot" id="status-dot-ad"></i><div><strong>AD Engineering</strong><span id="status-note-ad">Checking…</span></div></div></div></section>
+
+<section class="panel source-panel" id="ktrade">
+  <div class="panel-head"><div><p class="eyebrow">K-TRADE</p><h2>Usage analytics</h2></div><span class="badge live" id="ktrade-badge">Live source</span></div>
+  <div class="source-stats"><div><span>Calls this month</span><strong id="calls-used">—</strong></div><div><span>Minutes used</span><strong id="minutes-used">—</strong></div><div><span>Minutes remaining</span><strong id="minutes-left">—</strong></div></div>
+  <small id="minutes-caption">Loading K-Trade data</small>
+  <div class="analytics-block" id="ktrade-analytics" data-project="ktrade">
+    <div class="analytics-head">
+      <div class="view-tabs" role="tablist" aria-label="K-Trade consumption period" data-project="ktrade">
+        <span class="tab-indicator"></span>
+        <button class="view-tab active" data-view="daily" role="tab" aria-selected="true">Daily</button>
+        <button class="view-tab" data-view="weekly" role="tab" aria-selected="false">Weekly</button>
+        <button class="view-tab" data-view="monthly" role="tab" aria-selected="false">Monthly</button>
+      </div>
+      <div class="period-nav" data-project="ktrade">
+        <button class="nav-btn" data-dir="-1" aria-label="Previous period">‹</button>
+        <button class="nav-btn" data-dir="1" aria-label="Next period">›</button>
+      </div>
+      <span class="today-chip" id="ktrade-today-chip" style="display:none"><i></i>Today in view</span>
+    </div>
+    <p class="chart-label">Minutes consumed <span class="chart-label-period" id="ktrade-period-caption"></span></p>
+    <div class="chart-wrap bar-chart-wrap"><canvas id="ktrade-bar-chart"></canvas><div class="chart-tooltip" id="ktrade-tooltip"></div><div class="empty" id="ktrade-bar-empty" style="display:none">Connect K-Trade to load usage history.</div></div>
+    <div class="summary-row" id="ktrade-summary">
+      <div><span>Total</span><strong id="ktrade-sum-total">—</strong></div>
+      <div><span>Average / day</span><strong id="ktrade-sum-avg">—</strong></div>
+      <div><span>Highest day</span><strong id="ktrade-sum-high">—</strong></div>
+      <div><span>Lowest day</span><strong id="ktrade-sum-low">—</strong></div>
+    </div>
+    <details class="data-table-toggle"><summary>View exact values as a table</summary><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Date</th><th>Minutes consumed</th></tr></thead><tbody id="ktrade-table-body"></tbody></table></div></details>
+  </div>
+</section>
+
+<section class="panel issues-panel" id="ktrade-issues">
+  <div class="issues-toggle" id="ktrade-issues-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="ktrade-issues-list">
+    <div class="panel-head">
+      <div><p class="eyebrow">K-TRADE</p><h2>Issue Resolution Log</h2></div>
+      <div class="issues-head-right"><span class="badge live" id="ktrade-issues-progress-badge">— / — Resolved</span><span class="issues-chevron" aria-hidden="true">▾</span></div>
+    </div>
+    <p class="issues-sub">Issues raised by the K-Trade team and their resolution status.</p>
+    <div class="issues-progress-track"><div class="issues-progress-fill" id="ktrade-issues-progress-fill"></div></div>
+  </div>
+  <div class="issues-list" id="ktrade-issues-list"></div>
+</section>
+
+<section class="panel source-panel" id="ad">
+  <div class="panel-head"><div><p class="eyebrow">AD ENGINEERING</p><h2>Usage analytics</h2></div><span class="badge pending" id="ad-badge">Awaiting API</span></div>
+  <div class="source-stats"><div><span>Proposals generated</span><strong id="proposals-generated">—</strong></div><div><span>Proposals remaining</span><strong id="proposals-remaining">—</strong></div></div>
+  <small id="proposals-caption">Connect AD Engineering</small>
+  <div class="analytics-block" id="ad-analytics" data-project="ad">
+    <div class="analytics-head">
+      <div class="view-tabs" role="tablist" aria-label="AD Engineering consumption period" data-project="ad">
+        <span class="tab-indicator"></span>
+        <button class="view-tab active" data-view="daily" role="tab" aria-selected="true">Daily</button>
+        <button class="view-tab" data-view="weekly" role="tab" aria-selected="false">Weekly</button>
+        <button class="view-tab" data-view="monthly" role="tab" aria-selected="false">Monthly</button>
+      </div>
+      <div class="period-nav" data-project="ad">
+        <button class="nav-btn" data-dir="-1" aria-label="Previous period">‹</button>
+        <button class="nav-btn" data-dir="1" aria-label="Next period">›</button>
+      </div>
+      <span class="today-chip" id="ad-today-chip" style="display:none"><i></i>Today in view</span>
+    </div>
+    <p class="chart-label">Proposals generated <span class="chart-label-period" id="ad-period-caption"></span></p>
+    <div class="chart-wrap bar-chart-wrap"><canvas id="ad-bar-chart"></canvas><div class="chart-tooltip" id="ad-tooltip"></div><div class="empty" id="ad-bar-empty" style="display:none">Connect AD Engineering to load proposal history.</div></div>
+    <div class="summary-row" id="ad-summary">
+      <div><span>Total</span><strong id="ad-sum-total">—</strong></div>
+      <div><span>Average / day</span><strong id="ad-sum-avg">—</strong></div>
+      <div><span>Highest day</span><strong id="ad-sum-high">—</strong></div>
+      <div><span>Lowest day</span><strong id="ad-sum-low">—</strong></div>
+    </div>
+    <details class="data-table-toggle"><summary>View exact values as a table</summary><div class="data-table-wrap"><table class="data-table"><thead><tr><th>Date</th><th>Proposals generated</th></tr></thead><tbody id="ad-table-body"></tbody></table></div></details>
+  </div>
+</section>
+
+<section class="panel issues-panel" id="ad-issues">
+  <div class="issues-toggle" id="ad-issues-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="ad-issues-list">
+    <div class="panel-head">
+      <div><p class="eyebrow">AD ENGINEERING</p><h2>Issue Resolution Log</h2></div>
+      <div class="issues-head-right"><span class="badge live" id="ad-issues-progress-badge">— / — Resolved</span><span class="issues-chevron" aria-hidden="true">▾</span></div>
+    </div>
+    <p class="issues-sub">Issues raised by the AD Engineering team and their resolution status.</p>
+    <div class="issues-progress-track"><div class="issues-progress-fill" id="ad-issues-progress-fill"></div></div>
+  </div>
+  <div class="issues-list" id="ad-issues-list"></div>
+</section>
+
 <section class="panel alerts-full" id="alerts"><div class="panel-head"><div><p class="eyebrow">ATTENTION REQUIRED</p><h2>Active alerts</h2></div></div><div id="alerts-list" class="alerts-list"><div class="alert-empty">Checking live thresholds…</div></div></section>
 <footer><span id="status-dot"></span><span id="status">Dashboard ready. Add local secrets to enable live data.</span><span id="updated"></span></footer></main></div><script src="app.js"></script></body></html>
