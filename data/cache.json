@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-06T16:34:34.656Z",
+  "generatedAt": "2026-09-07T12:15:06.166Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 746,
-    "remainingMinutes": 9254,
-    "utilisation": 7.5,
-    "conversations": 178,
-    "averageDuration": "02:05",
+    "consumedMinutes": 953.53,
+    "remainingMinutes": 9046.47,
+    "utilisation": 9.5,
+    "conversations": 197,
+    "averageDuration": "02:03",
     "trend": [
       {
         "key": "2025-10",
@@ -62,12 +62,12 @@
       {
         "key": "2026-08",
         "label": "August 2026",
-        "value": 272
+        "value": 247
       },
       {
         "key": "2026-09",
         "label": "September 2026",
-        "value": 178
+        "value": 197
       }
     ],
     "dailyMinutes": [
@@ -142,6 +142,10 @@
       {
         "key": "2026-09-06",
         "value": 0
+      },
+      {
+        "key": "2026-09-07",
+        "value": 207.53
       }
     ],
     "rawReportCount": 0,
@@ -547,6 +551,10 @@
       },
       {
         "key": "2026-09-06",
+        "value": 0
+      },
+      {
+        "key": "2026-09-07",
         "value": 0
       }
     ],
