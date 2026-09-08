@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-07T18:29:22.521Z",
+  "generatedAt": "2026-09-08T11:04:41.445Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 963.43,
-    "remainingMinutes": 9036.57,
-    "utilisation": 9.6,
-    "conversations": 199,
+    "consumedMinutes": 1086.2,
+    "remainingMinutes": 8913.8,
+    "utilisation": 10.9,
+    "conversations": 207,
     "averageDuration": "02:03",
     "trend": [
       {
@@ -62,12 +62,12 @@
       {
         "key": "2026-08",
         "label": "August 2026",
-        "value": 245
+        "value": 235
       },
       {
         "key": "2026-09",
         "label": "September 2026",
-        "value": 199
+        "value": 207
       }
     ],
     "dailyMinutes": [
@@ -146,6 +146,10 @@
       {
         "key": "2026-09-07",
         "value": 217.43
+      },
+      {
+        "key": "2026-09-08",
+        "value": 122.77
       }
     ],
     "rawReportCount": 0,
@@ -154,10 +158,10 @@
   },
   "adEngineering": {
     "connected": true,
-    "generatedThisMonth": 0,
+    "generatedThisMonth": 1,
     "monthlyLimit": 5,
-    "remaining": 5,
-    "utilisation": 0,
+    "remaining": 4,
+    "utilisation": 20,
     "trend": [
       {
         "key": "2025-10",
@@ -217,7 +221,7 @@
       {
         "key": "2026-09",
         "label": "September 2026",
-        "value": 0
+        "value": 1
       }
     ],
     "dailyProposals": [
@@ -556,6 +560,10 @@
       {
         "key": "2026-09-07",
         "value": 0
+      },
+      {
+        "key": "2026-09-08",
+        "value": 1
       }
     ],
     "statusLevel": "green",
