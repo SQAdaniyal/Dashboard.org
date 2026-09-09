@@ -438,7 +438,8 @@ const ISSUE_LOGS = {
     { text: 'AI went unresponsive at the end of a conversation', category: 'AI Behavior', raised: '27 Aug 2026', resolved: '28 Aug 2026' },
     { text: 'Bot completely unresponsive; customer questions missing from the transcript', category: 'AI Behavior', raised: '27 Aug 2026', resolved: '28 Aug 2026' },
     { text: 'Separate extensions required per department', category: 'Process', raised: '3 Aug 2026', resolved: '28 Aug 2026' },
-    { text: 'SIM calls not reaching new extensions (802 and others)', category: 'Infrastructure', raised: '3 Aug 2026', resolved: '28 Aug 2026' }
+    { text: 'SIM calls not reaching new extensions (802 and others)', category: 'Infrastructure', raised: '3 Aug 2026', resolved: '28 Aug 2026' },
+    { text: "Can't login..", category: 'Access', raised: '9 Sep 2026', resolved: null, note: 'Waiting for Hassan’s response' }
   ],
   ad: [
     { text: 'A solicitation failed to generate a proposal even after earlier pipeline fixes', category: 'Proposal Pipeline', raised: '1 Sep 2026', resolved: '2 Sep 2026' }
@@ -452,7 +453,8 @@ function renderIssues(project) {
   $(`${project}-issues-progress-badge`).textContent = `${resolvedCount} / ${issues.length} Resolved`;
   requestAnimationFrame(() => { $(`${project}-issues-progress-fill`).style.width = `${(resolvedCount / issues.length) * 100}%`; });
   const frag = document.createDocumentFragment();
-  issues.forEach((issue, i) => {
+  const sorted = [...issues].sort((a, b) => (a.resolved ? 1 : 0) - (b.resolved ? 1 : 0));
+  sorted.forEach((issue, i) => {
     const row = document.createElement('div');
     row.className = 'issue-row';
     row.style.animationDelay = `${Math.min(i * 0.04, 0.4)}s`;
@@ -470,7 +472,9 @@ function renderIssues(project) {
       body.append(document.createElement('br'), note);
     }
 
-    const status = document.createElement('span'); status.className = 'issue-status resolved'; status.textContent = 'Resolved';
+    const status = document.createElement('span');
+    status.className = issue.resolved ? 'issue-status resolved' : 'issue-status in-progress';
+    status.textContent = issue.resolved ? 'Resolved' : 'In Progress';
 
     row.append(num, body, status);
     frag.appendChild(row);
