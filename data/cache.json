@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-10T17:23:50.740Z",
+  "generatedAt": "2026-09-11T11:04:39.272Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 10000,
-    "consumedMinutes": 1270.82,
-    "remainingMinutes": 8729.18,
+    "consumedMinutes": 1271.75,
+    "remainingMinutes": 8728.25,
     "utilisation": 12.7,
     "conversations": 223,
     "averageDuration": "02:03",
@@ -158,6 +158,10 @@
       {
         "key": "2026-09-10",
         "value": 0
+      },
+      {
+        "key": "2026-09-11",
+        "value": 0.93
       }
     ],
     "rawReportCount": 0,
@@ -579,6 +583,10 @@
       },
       {
         "key": "2026-09-10",
+        "value": 0
+      },
+      {
+        "key": "2026-09-11",
         "value": 0
       }
     ],
