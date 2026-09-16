@@ -1,185 +1,15 @@
 {
-  "generatedAt": "2026-09-15T17:50:01.207Z",
+  "generatedAt": "2026-09-16T11:19:52.624Z",
   "ktrade": {
     "connected": true,
-    "allocatedMinutes": 10000,
-    "consumedMinutes": 1277.95,
-    "remainingMinutes": 8722.05,
-    "utilisation": 12.8,
-    "conversations": 223,
-    "averageDuration": "02:02",
-    "trend": [
-      {
-        "key": "2025-10",
-        "label": "October 2025",
-        "value": 0
-      },
-      {
-        "key": "2025-11",
-        "label": "November 2025",
-        "value": 0
-      },
-      {
-        "key": "2025-12",
-        "label": "December 2025",
-        "value": 0
-      },
-      {
-        "key": "2026-01",
-        "label": "January 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-02",
-        "label": "February 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-03",
-        "label": "March 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-04",
-        "label": "April 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-05",
-        "label": "May 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-06",
-        "label": "June 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-07",
-        "label": "July 2026",
-        "value": 0
-      },
-      {
-        "key": "2026-08",
-        "label": "August 2026",
-        "value": 207
-      },
-      {
-        "key": "2026-09",
-        "label": "September 2026",
-        "value": 223
-      }
-    ],
-    "dailyMinutes": [
-      {
-        "key": "2026-08-20",
-        "value": 42.43
-      },
-      {
-        "key": "2026-08-21",
-        "value": 74.7
-      },
-      {
-        "key": "2026-08-22",
-        "value": 0
-      },
-      {
-        "key": "2026-08-23",
-        "value": 0
-      },
-      {
-        "key": "2026-08-24",
-        "value": 111.42
-      },
-      {
-        "key": "2026-08-25",
-        "value": 54.52
-      },
-      {
-        "key": "2026-08-26",
-        "value": 0
-      },
-      {
-        "key": "2026-08-27",
-        "value": 84.05
-      },
-      {
-        "key": "2026-08-28",
-        "value": 51.22
-      },
-      {
-        "key": "2026-08-29",
-        "value": 0
-      },
-      {
-        "key": "2026-08-30",
-        "value": 0
-      },
-      {
-        "key": "2026-08-31",
-        "value": 443.97
-      },
-      {
-        "key": "2026-09-01",
-        "value": 162.57
-      },
-      {
-        "key": "2026-09-02",
-        "value": 128.43
-      },
-      {
-        "key": "2026-09-03",
-        "value": 418.63
-      },
-      {
-        "key": "2026-09-04",
-        "value": 36.37
-      },
-      {
-        "key": "2026-09-05",
-        "value": 0
-      },
-      {
-        "key": "2026-09-06",
-        "value": 0
-      },
-      {
-        "key": "2026-09-07",
-        "value": 217.43
-      },
-      {
-        "key": "2026-09-08",
-        "value": 139.37
-      },
-      {
-        "key": "2026-09-09",
-        "value": 168.02
-      },
-      {
-        "key": "2026-09-10",
-        "value": 0
-      },
-      {
-        "key": "2026-09-11",
-        "value": 0.93
-      },
-      {
-        "key": "2026-09-12",
-        "value": 0
-      },
-      {
-        "key": "2026-09-13",
-        "value": 0
-      },
-      {
-        "key": "2026-09-14",
-        "value": 6.2
-      },
-      {
-        "key": "2026-09-15",
-        "value": 0
-      }
-    ],
+    "allocatedMinutes": 0,
+    "consumedMinutes": 0,
+    "remainingMinutes": 0,
+    "utilisation": 0,
+    "conversations": 0,
+    "averageDuration": null,
+    "trend": [],
+    "dailyMinutes": [],
     "rawReportCount": 0,
     "statusLevel": "green",
     "statusNote": "Operational"
@@ -619,6 +449,10 @@
       },
       {
         "key": "2026-09-15",
+        "value": 0
+      },
+      {
+        "key": "2026-09-16",
         "value": 0
       }
     ],
