@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T17:50:02.224Z",
+  "generatedAt": "2026-11-06T20:09:21.443Z",
   "ktrade": {
     "connected": true,
     "allocatedMinutes": 0,
@@ -657,6 +657,10 @@
       },
       {
         "key": "2026-11-06",
+        "value": 0
+      },
+      {
+        "key": "2026-11-07",
         "value": 0
       }
     ],
